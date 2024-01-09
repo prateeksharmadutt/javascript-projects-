@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .calculator{
+            border: 2px solid black;
+            padding: 20px;
+            background-color: darkgray;
+        }
+        input{
+            border: 2px solid black;
+            padding: 20px 6px;
+            background-color: whitesmoke;
+            font-size: 30px;
+        }
+        .lower{
+            /* border: 2px solid black; */
+            margin-top: 10px;
+        }
+        button{
+            padding: 20px 40px;
+            font-size: large;
+            background: linear-gradient(to bottom,pink,rgb(215, 15, 49))
+        }
+        button:hover{
+            box-shadow: 2px 2px 40px rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="calculator">
+            <div class="displayy" >
+                <input type="text" id="input">    
+            </div>
+            <div class="lower">
+                <button style="padding: 20px 30px; background: linear-gradient(to bottom,rgb(108, 108, 173),rgb(30, 30, 124));">AC</button>
+                <button style="padding: 20px 30px;">DEL</button>
+                <button>%</button>
+                <button>/</button>
+
+                <br><br>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>*</button>
+
+                <br><br>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button style="padding: 20px 39px;">+</button>
+
+                <br><br>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>-</button>
+
+                <br><br>
+                <button>.</button>
+                <button>0</button>
+                <button style="padding: 20px 90px; background: linear-gradient(to bottom,rgb(108, 108, 173),rgb(30, 30, 124));">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let btn=document.querySelectorAll("button");
+
+        for(let i of btn)
+        {
+            i.onclick=function()
+            {
+                if(i.innerText== "=")
+                {
+                    let val=document.querySelector("#input").value;
+                    document.querySelector("#input").value = eval(val);
+                }
+                else if(i.innerText== "AC")
+                {
+                    document.querySelector("#input").value = ""
+                }
+                else if(i.innerText== "DEL")
+                {
+                    let val=document.querySelector("#input").value;
+                    document.querySelector("#input").value = val.slice(0,-1);
+                }
+                else
+                {
+                    document.querySelector("#input").value += i.innerText;
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
