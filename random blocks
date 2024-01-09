@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom project2</title>
+    <style>
+        
+        .container {
+      border: 2px solid black;
+      background-color: pink;
+      width: 650px;
+      height: 90vh;
+      margin: auto;
+      margin-top: 20vh;
+      
+      align-items: top;
+      justify-content: center;
+    }
+    .main{
+        margin-top: 30px;
+        margin-left: 80px;
+    }
+    .box1{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+    }
+    .a{
+        height: 150px;
+        width: 23%;
+        border: 2px solid blue;
+    }
+    .e{
+        height: 150px;
+        width: 23%;
+        border: 2px solid red;
+    }
+
+      
+    
+    
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="main">
+        <input placeholder="Enter your colourname" type="enter your colour name">
+        <input placeholder="Select your div" type="selct your city">
+        <button class="btn">Submit</button>
+    </div>
+    <div class="box1">
+        <div class="a"></div>
+        <div class="a"></div>
+        <div class="a"></div>
+        <div class="a"></div>
+    </div>
+    <div class="box1">
+        <div class="e"></div>
+        <div class="e"></div>
+        <div class="e"></div>
+        <div class="e"></div>
+    </div>
+   </div>
+   <script>
+
+    document.querySelector("#btn1").onclick=function(){
+        let a=document.querySelector("#inp1").value;
+        let b=document.querySelector("#inp2").value;
+        if(b>8)
+        {
+            alert("dial valid num")
+        }
+        document.getElementById(b).style.backgroundcolor=a;
+    }
+    document.quaryselector("#btn2").onclick=function(){
+        let c=document.querySelectorAll("#inp1");
+        let b=document.querySelectorAll("#inp2").value;
+        document.getElementById(b).style.backgroundColor="white";
+
+        for(let i of c){
+            i.foucus;
+            i.value=" "
+        }
+
+    }
+   </script>
+</body>
+</html>
