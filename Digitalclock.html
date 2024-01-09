@@ -1,0 +1,120 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+        body{
+            /* background-color: black; */
+        }
+        .conatiner h1{
+            font-size: 50px;
+            color:black;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .conatiner {
+            border-radius: 40px;
+            padding: 10vh;
+            width: 40%;
+            margin: auto;
+            margin-top: 25vh;
+            border: 2px solid burlywood;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: aqua;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        .clock {
+            margin-top: 5vh;
+            font-size: 60px;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+
+
+    <div class="conatiner">
+        
+
+        
+        <h1> DIGITAL CLOCK</h1>
+        <div class="clock">
+            <span id="hour">00</span>
+            <span class="point">:</span>
+            <span id="mini">00</span>
+            <span class="point">:</span>
+            <span id="sec">00</span>
+        </div>
+       <select name="" id="sel">
+        <option value="none" >none</option>
+        <option value="dark" id="dark">Drak</option>
+        <option value="blue" id="blue">blue</option>
+       </select>
+
+
+
+    </div>
+    <script>
+    setInterval(showdata,1000);
+    function showdata(){
+        let date=new Date();
+        let h= date.getHours();
+
+        document.getElementById("hour").innerHTML=h;
+        let m= date.getMinutes();
+        document.getElementById("mini").innerHTML=m;
+        let s = date.getSeconds();
+        document.getElementById("sec").innerHTML=s;
+        console.log(h);
+    }
+    document.getElementById("sel").onclick=function(){
+
+        let a= document.getElementById("sel").value;
+        console.log(a);
+        if(a=="none"){
+            
+            document.body.style.backgroundColor="white";
+            
+
+        }
+        else if(a=="dark"){
+            document.getElementById("conatiner").style.backgroundColor="black";
+            document.body.style.backgroundColor="black";
+        }
+        else if(a=="blue"){
+            document.body.style.backgroundColor="blue";
+
+        }
+    }
+
+
+  
+       
+
+    
+    
+
+    </script>
+
+</body>
+
+</html>
